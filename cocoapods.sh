@@ -12,4 +12,4 @@ PATH=${PATH}:/usr/local/var/rbenv/shims
 which pod
 which -s pod || (echo "error: cocoapods is not installed" && false)
 
-pod $@
+pod "$@"
