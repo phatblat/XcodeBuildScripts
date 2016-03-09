@@ -9,6 +9,6 @@
 #  Copyright (c) 2015 Ben Chatelain. All rights reserved.
 
 KEYWORDS="TODO:|FIXME:|HACK:|\?\?\?:|\!\!\!:"
-find "${SRCROOT}/${PROJECT_NAME}" "${SRCROOT}/${PROJECT_NAME}Tests" \( -name "*.h" -or -name "*.m" \) -print0 | \
+find "${SRCROOT}/${PROJECT_NAME}" "${SRCROOT}/${PROJECT_NAME}Tests" \( -name "*.h" -or -name "*.m" -or -name "*.swift" \) -print0 | \
 	xargs -0 egrep --with-filename --line-number --only-matching "($KEYWORDS).*\$" | \
 	perl -p -e "s/($KEYWORDS)/ warning: \$1/"
